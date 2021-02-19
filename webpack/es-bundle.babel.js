@@ -14,6 +14,7 @@ import { DuplicatesPlugin } from "inspectpack/plugin"
 import { WebpackBundleSizeAnalyzerPlugin } from "webpack-bundle-size-analyzer"
 // import path from "path"
 // import { StatsWriterPlugin } from "webpack-stats-plugin"
+const EsmWebpackPlugin = require("@purtuga/esm-webpack-plugin")
 
 const result = configBuilder(
   {
@@ -28,12 +29,18 @@ const result = configBuilder(
         "./src/index.js",
       ],
     },
+    /*experiments: { // needs webpack 5
+      outputModule: true
+    },*/
     output: {
       globalObject: "this",
-      library: "SwaggerUIBundle",
-      libraryTarget: "commonjs2",
+      library: "LIB",
+      libraryTarget: "var",
+      libraryExport: ""
+      // libraryTarget: "module" // needs webpack 5
     },
     plugins: [
+      new EsmWebpackPlugin(),
       new DuplicatesPlugin({
         // emit compilation warning or error? (Default: `false`)
         emitErrors: false,

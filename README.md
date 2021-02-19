@@ -1,3 +1,5 @@
+## PLEASE READ: This repo will go away once the original Swagger-UI's ESM support has been fixed.  See https://github.com/swagger-api/swagger-ui/issues/6678 and https://github.com/swagger-api/swagger-ui/pull/6720
+
 # <img src="https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SWU-logo-clr.png" width="300">
 
 [![NPM version](https://badge.fury.io/js/swagger-ui.svg)](http://badge.fury.io/js/swagger-ui)
